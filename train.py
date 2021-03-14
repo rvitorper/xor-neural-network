@@ -12,9 +12,9 @@ m = 1
 num_hidden_neurons = n + m + 2
 
 num_output_neurons = m
-model.add(Dense(num_hidden_neurons, input_dim=n, activation='relu'))
-model.add(Dense(num_hidden_neurons, activation='relu'))
-model.add(Dense(num_output_neurons, activation='sigmoid'))
+model.add(Dense(num_hidden_neurons, input_dim=n, activation='tanh'))
+model.add(Dense(num_hidden_neurons, activation='tanh'))
+model.add(Dense(num_output_neurons, activation='tanh'))
 
 opt = SGD(learning_rate=0.01)
 model.compile(loss='binary_crossentropy', optimizer=opt, metrics=['binary_accuracy'])
